@@ -1,0 +1,24 @@
+name: "Publish resource pack"
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+
+      - name: Zip the repository contents
+        run: |
+          mkdir -p dist
+          zip -r dist/AlienResourcePack.zip . -x ".git/*" ".github/*"
+
+      - name: "Upload release asset"
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip

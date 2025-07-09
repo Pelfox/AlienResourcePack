@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "pack_format": 64,
+    "description": {
+      "type": "translatable",
+      "translate": "aliens.resource_pack.description",
+      "fallback": "§aMakes all cats look like §5aliens§a."
+    }
+  }
+}
